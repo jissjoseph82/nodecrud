@@ -41,10 +41,10 @@ app.use(
     
     connection(mysql,{
         
-        host: 'mysql://mysql:3306/', //'localhost',
-        user: 'userEHX',
-        password : 'hMmx56FN4GHpMXOl',
-        port : 3306, //port mysql
+        host: process.env.RDS_HOSTNAME, //'localhost',
+        user: process.env.RDS_USERNAME,
+        password : process.env.RDS_PASSWORD,
+        port : process.env.RDS_PORT, //port mysql
         database:'sampledb'
 
     },'pool') //or single
